@@ -11,12 +11,15 @@ services:
             - type: volume
               source: postgresdatadb
               target: /opt/fgh/data
+        environment:
+            - "Africa/Maputo"
         restart: unless-stopped
 
 networks:
   default:
     external:
-      name: fgh-openmrs-docker-master_network
+      name: fgh-openmrs-docker_network
+
 
 volumes:
   postgresdatadb:
